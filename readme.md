@@ -25,10 +25,59 @@ Credits:
 
 2 Facial Recognition, the original plugin base for the Combine Hud; Elec
 
-3
+3 Thirdperson; TFA
 
 
 #### Plugin Overview
 
 
 ##### Application System
+Description: The Application System is an in-built CCA application system built using MySQL, which allows players to apply for your respective MPF branches in-game.
+
+Customization:
+Customizing the questions of the Application System is simple, and the questions can be found in cl_panels.lua, keep in mind you'll have to change both the view text and the application panel text, the application view panel text starts at line 127, and end at line 248, for the application window itself, it starts at line 326 and ends at 472.
+
+I do not provide support for adding additional questions, you'll have to figure it out yourself, or change existing questions.
+
+Known Errors:
+When there are no applications present, when opening on the view application interface (/viewapplications) an error will output.
+
+##### New Attributes
+
+##### Citizen Production
+
+##### Crafting
+
+##### Identity System
+
+##### Item Population
+
+##### Quests
+
+##### Radio
+
+##### Admin Commands
+
+##### Better Thirdperson
+
+##### Combine Chatter
+
+##### Combine Display Messages
+
+##### Combine HUD
+
+##### Combine MOTD
+
+##### Cool Things
+
+##### Item Spawner
+
+##### Squad System
+
+##### Survival System
+
+#### Disabled Plugins; non-functional or unfinished, or otherwise;
+
+##### Donator System
+##### Weapon Construction
+
