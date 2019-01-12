@@ -22,8 +22,11 @@ Save for the base schema and some other tidbits, everything in here was made by 
 Credits:
 
 1 Gmod Legs 3; https://steamcommunity.com/sharedfiles/filedetails/?id=112806637
+
 2 Facial Recognition, the original plugin base for the Combine Hud; Elec
-3 
+
+3
+
 
 #### Plugin Overview
 
