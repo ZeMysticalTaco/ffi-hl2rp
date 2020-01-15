@@ -32,9 +32,37 @@ for k, v in pairs(clothes_torso) do
 			local data = item.player:GetCharacter():GetData("groups", {})
 			data[1] = k
 			item.player:GetCharacter():SetData("groups", data)
+			item:SetData("equip", true)
+			
 			return false
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == false then
+				return true
+			else
+				return false
+			end
 		end
 	}
+	ITEM.functions.Remove = {
+		OnRun = function(item)
+			item.player:SetBodygroup(1, 0)
+			local data = item.player:GetCharacter():GetData("groups", {})
+			data[1] = 0
+			item.player:GetCharacter():SetData("groups", data)
+			item:SetData("equip", false)
+			
+			return false
+			
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == true then
+				return true
+			else
+				return false
+			end
+
+end}
 
 	function ITEM:PopulateTooltip(tooltip)
 		if v[3] == 2 then
@@ -64,13 +92,42 @@ for k, v in pairs(clothes_legs) do
 	ITEM.description = v[2]
 
 	ITEM.functions.Wear = {
-		OnRun =function(item)
-		item.player:SetBodygroup(2, k)
+		OnRun = function(item)
+			item.player:SetBodygroup(2, k)
 			local data = item.player:GetCharacter():GetData("groups", {})
 			data[2] = k
 			item.player:GetCharacter():SetData("groups", data)
-		return false
-	end}
+			item:SetData("equip", true)
+			
+			return false
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == false then
+				return true
+			else
+				return false
+			end
+		end
+	}
+	ITEM.functions.Remove = {
+		OnRun = function(item)
+			item.player:SetBodygroup(2, 0)
+			local data = item.player:GetCharacter():GetData("groups", {})
+			data[2] = 0
+			item.player:GetCharacter():SetData("groups", data)
+			item:SetData("equip", false)
+			
+			return false
+			
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == true then
+				return true
+			else
+				return false
+			end
+
+end}
 end
 
 local ITEM = ix.item.Register("gloves", nil, false, nil, true)
@@ -84,17 +141,37 @@ ITEM.functions.Wear = {
 	local data = item.player:GetCharacter():GetData("groups", {})
 	data[3] = 1
 	item.player:GetCharacter():SetData("groups", data)
+	item:SetData("equip", true)
 	return false
-end}
+end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == false then
+				return true
+			else
+				return false
+			end
+		end
+}
 
-ITEM.functions.Remove = {function(item)
-	OnRun = item.player:SetBodygroup(3, 0)
-		local data = item.player:GetCharacter():GetData("groups", {})
-		data[3] = 0
-		item.player:GetCharacter():SetData("groups", data)
-		return false
-end}
+	ITEM.functions.Remove = {
+		OnRun = function(item)
+			item.player:SetBodygroup(3, 0)
+			local data = item.player:GetCharacter():GetData("groups", {})
+			data[3] = 0
+			item.player:GetCharacter():SetData("groups", data)
+			item:SetData("equip", false)
+			
+			return false
+			
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == true then
+				return true
+			else
+				return false
+			end
 
+end}
 
 //TODO: POPULATE BEANIES
 //TODO: POPULATE LOYALTY KIOSK ITEMS
@@ -118,10 +195,36 @@ for k, v in pairs(clothes_head) do
 			local data = item.player:GetCharacter():GetData("groups", {})
 			data[4] = k
 			item.player:GetCharacter():SetData("groups", data)
+			item:SetData("equip", true)
 			return false
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == false then
+				return true
+			else
+				return false
+			end
 		end
-	}
+}
+	ITEM.functions.Remove = {
+		OnRun = function(item)
+			item.player:SetBodygroup(4, 0)
+			local data = item.player:GetCharacter():GetData("groups", {})
+			data[4] = 0
+			item.player:GetCharacter():SetData("groups", data)
+			item:SetData("equip", false)
+			
+			return false
+			
+		end,
+		OnCanRun = function(item)
+			if item:GetData("equip", false) == true then
+				return true
+			else
+				return false
+			end
 
+end}
 	function ITEM:PopulateTooltip(tooltip)
 		if v[3] then
 			local tip = tooltip:AddRow("clothingwarning")
