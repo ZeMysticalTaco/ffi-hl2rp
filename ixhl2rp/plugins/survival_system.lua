@@ -2,6 +2,29 @@ PLUGIN.name = "Survival System"
 PLUGIN.author = "ZeMysticalTaco"
 PLUGIN.description = "A survival system consisting of hunger and thirst."
 
+local speed = 300
+local decay = 1
+
+ix.config.Add("hungerDecaySpeed", speed, "Speed at which hunger should decay.", nil, {
+	data = {min = 100, max = 600},
+	category = "Survival System"
+})
+
+ix.config.Add("hungerDecayAmount", decay, "Amount at which hunger should decay", nil, {
+	data = {min = 0, max = 5},
+	category = "Survival System"
+})
+
+ix.config.Add("thirstDecaySpeed", speed, "Speed at which thirst should decay.", nil, {
+	data = {min = 100, max = 600},
+	category = "Survival System"
+})
+
+ix.config.Add("thirstDecayAmount", decay, "Amount at which thirst should decay", nil, {
+	data = {min = 0, max = 5},
+	category = "Survival System"
+})
+
 if SERVER then
 	function PLUGIN:OnCharacterCreated(client, character)
 		character:SetData("hunger", 100)
